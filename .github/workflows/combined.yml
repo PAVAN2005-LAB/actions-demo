@@ -1,0 +1,25 @@
+name: Combined Workflows
+
+on:
+  workflow_dispatch: # allows manual triggering
+
+jobs:
+  iss-logger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Fetch ISS data
+        run: |
+          echo "ISS Logger running"
+          # Add your ISS fetch code here
+
+  cache-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Cache dependencies
+        run: |
+          echo "Cache demo running"
+          # Add your cache setup code here
